@@ -22,7 +22,7 @@ requirements:
     - python
     - blessed >=1.9.5
     - botocore >=1.15
-    - cement ==2.10.12,<3
+    - cement >=2.10.12
     - colorama >=0.4
     - future >=0.16.0
     - pathspec >=0.5.9

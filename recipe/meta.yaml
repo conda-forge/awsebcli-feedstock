@@ -1,5 +1,5 @@
 {% set name = "awsebcli" %}
-{% set version = "3.19.0" %}
+{% set version = "3.19.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 35fc8417a37c9234789947d40b6f66b49a115d06d0dd9f6ce0bebd617df60202
+  sha256: bd5221c26b3c7eb64597c6ae03b76c2025ed210e68d3702819bdfa1afb015230
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:

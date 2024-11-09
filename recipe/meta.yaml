@@ -1,5 +1,5 @@
 {% set name = "awsebcli" %}
-{% set version = "3.20.7" %}
+{% set version = "3.21.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,41 +7,39 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8672d6a9ce14cd49efcf8c26299f0970459430f9a1d817504b5200cb10bec9be
+  sha256: 07be62114080f26211036e0eb0b99eadb4becfe1f341bc1ea5f0051cba3c4641
 
 build:
-  skip: true  # [win]
+  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python
-    - blessed >=1.9.5
-    - botocore >=1.15
-    - cement ==2.10.12,<3
-    - colorama >=0.4
-    - future >=0.16.0
-    - pathspec >=0.5.9
+    - python >={{ python_min }}
+    - botocore >=1.35
+    - cement ==2.10.14
+    - colorama >=0.4.6
+    - pathspec >=0.10.1
     - python-dateutil >=2.1
-    - requests >=2.20.1
-    - setuptools >=20.0
-    - semantic_version >=2.8.5
-    - six >=1.11.0
-    - termcolor >=1.1.0
-    - urllib3 >=1.24.1
-    - wcwidth >=0.1.7
+    - requests >=2.31
+    - semantic_version >=2.10.0
+    - termcolor >=2.4.0
+    - wcwidth >=0.2.13
     - PyYAML >=5.3.1
+    - urllib3 >=1.26.5
+    - blessed >=1.20.0  # [win]
 
 test:
   imports:
     - ebcli
   commands:
-    - eb
-    - ebp
+    - eb --help
+    - ebp --help
 
 about:
   home: http://aws.amazon.com/elasticbeanstalk/

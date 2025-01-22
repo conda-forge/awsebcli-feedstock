@@ -9,6 +9,8 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/awsebcli-${{ version }}.tar.gz
   sha256: 07be62114080f26211036e0eb0b99eadb4becfe1f341bc1ea5f0051cba3c4641
+  patches:
+    - fix-deps.patch
 
 build:
   number: 0
@@ -45,7 +47,7 @@ tests:
   - python:
       imports:
         - ebcli
-      pip_check: false
+      pip_check: true
       python_version: ${{ python_min }}.*
   - requirements:
       run:

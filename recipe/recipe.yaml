@@ -1,18 +1,19 @@
-{% set name = "awsebcli" %}
-{% set version = "3.20.3" %}
+context:
+  name: awsebcli
+  version: 3.20.3
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
   sha256: 5b79d45cf017a2270340d5e2824b51d7e6fff56eaabe2f747ee8eb5c07a4c535
 
 build:
-  skip: true  # [win]
-  number: 1
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 2
+  skip: win
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -36,19 +37,20 @@ requirements:
     - wcwidth >=0.1.7
     - PyYAML >=5.3.1
 
-test:
-  imports:
-    - ebcli
-  commands:
-    - eb
-    - ebp
+tests:
+  - python:
+      imports:
+        - ebcli
+      pip_check: false
+  - script:
+      - eb
+      - ebp
 
 about:
-  home: http://aws.amazon.com/elasticbeanstalk/
   license: Apache-2.0
-  license_family: Apache
   license_file: LICENSE.txt
   summary: Command Line Interface for AWS EB.
+  homepage: http://aws.amazon.com/elasticbeanstalk/
 
 extra:
   recipe-maintainers:

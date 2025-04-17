@@ -1,6 +1,6 @@
 context:
   name: awsebcli
-  version: 3.21.0
+  version: "3.22.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/awsebcli-${{ version }}.tar.gz
-  sha256: 07be62114080f26211036e0eb0b99eadb4becfe1f341bc1ea5f0051cba3c4641
+  sha256: c480f07c7fb4047cdd77667480fe060e11d4d48a833f7c73708da1c028dfbb45
   patches:
     - fix-deps.patch
 
@@ -28,9 +28,9 @@ requirements:
     - setuptools >=20.0
   run:
     - python >=${{ python_min }}
-    - botocore <1.36.0,>=1.35.0
+    - botocore >=1.35.0,<1.36.0
     - cement ==2.10.12
-    - colorama <0.5,>=0.4.6
+    - colorama >=0.4.6,<0.5
     - pathspec ==0.10.1
     - python-dateutil <3.0.0,>=2.1
     - requests <3,>=2.31
@@ -42,6 +42,7 @@ requirements:
     - urllib3 <2,>=1.26.5
     - ${{ "blessed >=1.20.0" if not win }}
     - ${{ "pywin32 ==223" if win }}
+    - packaging
 
 tests:
   - python:
@@ -60,7 +61,8 @@ about:
   license: Apache-2.0
   license_file: LICENSE.txt
   summary: Command Line Interface for AWS EB.
-  homepage: http://aws.amazon.com/elasticbeanstalk/
+  homepage: https://github.com/aws/aws-elastic-beanstalk-cli
+  documentation: http://aws.amazon.com/elasticbeanstalk/
 
 extra:
   recipe-maintainers:

@@ -3,11 +3,13 @@ About awsebcli-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/awsebcli-feedstock/blob/main/LICENSE.txt)
 
-Home: http://aws.amazon.com/elasticbeanstalk/
+Home: https://github.com/aws/aws-elastic-beanstalk-cli
 
 Package license: Apache-2.0
 
 Summary: Command Line Interface for AWS EB.
+
+Documentation: http://aws.amazon.com/elasticbeanstalk/
 
 Current build status
 ====================

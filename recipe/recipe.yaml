@@ -28,9 +28,9 @@ requirements:
     - setuptools >=20.0
   run:
     - python >=${{ python_min }}
-    - botocore <1.36.0,>=1.35.0
+    - botocore >=1.35.0,<1.36.0
     - cement ==2.10.12
-    - colorama <0.5,>=0.4.6
+    - colorama >=0.4.6,<0.5
     - pathspec ==0.10.1
     - python-dateutil <3.0.0,>=2.1
     - requests <3,>=2.31
@@ -60,7 +60,8 @@ about:
   license: Apache-2.0
   license_file: LICENSE.txt
   summary: Command Line Interface for AWS EB.
-  homepage: http://aws.amazon.com/elasticbeanstalk/
+  homepage: https://github.com/aws/aws-elastic-beanstalk-cli
+  documentation: http://aws.amazon.com/elasticbeanstalk/
 
 extra:
   recipe-maintainers:

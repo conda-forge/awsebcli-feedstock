@@ -42,6 +42,7 @@ requirements:
     - urllib3 <2,>=1.26.5
     - ${{ "blessed >=1.20.0" if not win }}
     - ${{ "pywin32 ==223" if win }}
+    - packaging
 
 tests:
   - python:

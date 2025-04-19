@@ -40,7 +40,7 @@ requirements:
     - wcwidth <0.3,>=0.2.13
     - pyyaml <6.1,>=5.3.1
     - urllib3 <2,>=1.26.5
-    - ${{ "blessed >=1.20.0" if not win }}
+    - blessed >=1.20.0
     - ${{ "pywin32 ==223" if win }}
     - packaging =24.2,<25.0
 

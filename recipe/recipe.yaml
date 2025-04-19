@@ -28,11 +28,11 @@ requirements:
     - setuptools >=20.0
   run:
     - python >=${{ python_min }}
-    - botocore >=1.35.0,<1.36.0
+    - botocore >=1.35.0,<2
     - cement ==2.10.12
     - colorama >=0.4.6,<0.5
-    - pathspec ==0.10.1
-    - python-dateutil <3.0.0,>=2.1
+    - pathspec ==0.12.1
+    - python-dateutil >=2.1,<3.0.0
     - requests <3,>=2.31
     - setuptools >=20.0
     - semantic_version <2.11,>=2.10.0
@@ -42,7 +42,7 @@ requirements:
     - urllib3 <2,>=1.26.5
     - ${{ "blessed >=1.20.0" if not win }}
     - ${{ "pywin32 ==223" if win }}
-    - packaging
+    - packaging =24.2,<25.0
 
 tests:
   - python:

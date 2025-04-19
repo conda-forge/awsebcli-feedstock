@@ -6,6 +6,6 @@ index dbc4285..008cbbc 100644
  botocore>=1.35.0,<2
 -cement==2.10.14
 +cement==2.10.12
-colorama>=0.4.6,<0.5
-pathspec==0.12.1
-python-dateutil>=2.1,<3.0.0
+ colorama>=0.4.6,<0.5
+ pathspec==0.12.1
+ python-dateutil>=2.1,<3.0.0

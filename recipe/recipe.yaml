@@ -1,6 +1,6 @@
 context:
   name: awsebcli
-  version: "3.26"
+  version: "3.27"
   python_min: "3.10"
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/awsebcli-${{ version }}.tar.gz
-  sha256: 410916a83c511b47e220af2ccc15d11f88c00ccb0487ef5e69a15b75d3ed58f4
+  sha256: 6ba8abcf5dd26a0629f6319aed7cd5173544647a63442bba6cce9a99cd194b75
   patches:
     - fix-deps.patch
 
